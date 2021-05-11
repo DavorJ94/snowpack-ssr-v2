@@ -1,0 +1,38 @@
+.addTodo {
+  margin: 1em 0;
+  margin-top: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnAddTodo,
+.inputTodo {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  padding: 0.5em 1em;
+  background-color: whitesmoke;
+}
+
+.inputTodo:focus {
+  outline: 1px solid white;
+}
+
+.btnAddTodo {
+  margin-left: 1em;
+  background-color: whitesmoke;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.warningMessage {
+  color: red;
+  text-align: center;
+}
+
+.columnContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}

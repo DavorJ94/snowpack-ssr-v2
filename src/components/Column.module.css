@@ -1,0 +1,23 @@
+.column {
+  width: 30%;
+  max-width: 300px;
+  min-height: 500px;
+  background-color: brown;
+  border: 2px solid black;
+  box-shadow: 1px 3px 10px 3px black;
+}
+
+.columnTitle {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-shadow: 1px 0px 2px white, -1px 0px 2px white, 0px 1px 2px white,
+    0px -1px 2px white;
+}
+
+.cardsContainer {
+  margin-top: 1em;
+}

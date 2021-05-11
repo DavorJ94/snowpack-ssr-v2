@@ -1,0 +1,56 @@
+.cardComponent {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+  align-items: center;
+}
+
+.trashCan,
+.rightCircle,
+.leftCircle {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.trashCan {
+  background: url("./css_sprites.png") -230px -10px;
+}
+
+.trashCan:hover {
+  transform: scale(1.35);
+  background: url("./css_sprites.png") -186px -10px;
+}
+
+.rightCircle {
+  background: url("./css_sprites.png") -142px -10px;
+}
+
+.rightCircle:hover {
+  transform: scale(1.35);
+  background: url("./css_sprites.png") -98px -10px;
+}
+
+.leftCircle {
+  background: url("./css_sprites.png") -54px -10px;
+}
+
+.leftCircle:hover {
+  transform: scale(1.35);
+  background: url("./css_sprites.png") -10px -10px;
+}
+
+.cardText {
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 0.5em 0;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border: 1px solid black;
+  box-shadow: 0px 0px 6px 1px black;
+}
