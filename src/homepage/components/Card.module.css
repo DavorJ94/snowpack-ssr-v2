@@ -17,30 +17,30 @@
 }
 
 .trashCan {
-  background: url("./css_sprites.png") -230px -10px;
+  background: url("./assets/css_sprites.png") -230px -10px;
 }
 
 .trashCan:hover {
   transform: scale(1.35);
-  background: url("./css_sprites.png") -186px -10px;
+  background: url("./assets/css_sprites.png") -186px -10px;
 }
 
 .rightCircle {
-  background: url("./css_sprites.png") -142px -10px;
+  background: url("./assets/css_sprites.png") -142px -10px;
 }
 
 .rightCircle:hover {
   transform: scale(1.35);
-  background: url("./css_sprites.png") -98px -10px;
+  background: url("./assets/css_sprites.png") -98px -10px;
 }
 
 .leftCircle {
-  background: url("./css_sprites.png") -54px -10px;
+  background: url("./assets/css_sprites.png") -54px -10px;
 }
 
 .leftCircle:hover {
   transform: scale(1.35);
-  background: url("./css_sprites.png") -10px -10px;
+  background: url("./assets/css_sprites.png") -10px -10px;
 }
 
 .cardText {

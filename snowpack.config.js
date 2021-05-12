@@ -25,4 +25,9 @@ module.exports = {
     baseUrl: "/to-do-app-improved",
     metaUrlPath: `dist`,
   },
+  alias: {
+    // prettier-ignore
+    "react": "preact/compat",
+    "react-dom": "preact/compat",
+  },
 };

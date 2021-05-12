@@ -15,12 +15,12 @@
 }
 
 .trashCan {
-  background: url("./css_sprites.png") -230px -10px;
+  background: url("./assets/css_sprites.png") -230px -10px;
 }
 
 .trashCan:hover {
   transform: scale(1.35);
-  background: url("./css_sprites.png") -186px -10px;
+  background: url("./assets/css_sprites.png") -186px -10px;
 }
 
 .cardText {

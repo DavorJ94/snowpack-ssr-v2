@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { h } from "preact";
+import { useState, useEffect } from "preact/hooks";
+import { html } from "htm/preact";
+import styles from "./homepage.module.css";
 import Column from "./components/Column";
+import emitter from "../eventEmitter";
 import idGenerator from "./utils/idGenerator";
-import styles from "./App.module.css";
 
-function App() {
+function Homepage() {
   const [toDoText, setToDoText] = useState("");
   const [toDoItems, setToDoItems] = useState([]);
   const [warningMessage, setWarningMessage] = useState("");
@@ -18,9 +21,6 @@ function App() {
   useEffect(() => {
     let items = JSON.parse(localStorage.getItem("toDoItems"));
     setToDoItems(() => items);
-    window.deletedItems = window.deletedItems
-      ? window.deletedItems
-      : new Array();
   }, []);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function App() {
       return;
     }
     if (e.keyCode === 13 || e.target.getAttribute("data-clicked")) {
-      const id = idGenerator(toDoItems);
+      const id = idGenerator();
       setToDoItems((prevItems) => [
         ...prevItems,
         { text: toDoText, status: "todo", id: id },
@@ -57,7 +57,8 @@ function App() {
       return item.id === input;
     });
     setToDoItems(() => itemsWithoutDeleted);
-    window.deletedItems.push(deletedItem);
+
+    emitter.emit("itemDeleted", deletedItem);
   }
 
   function handleArrowClick(id, arrowType) {
@@ -84,50 +85,49 @@ function App() {
     setToDoItems(() => newItemsState);
   }
 
-  return (
-    <div>
-      <div className={styles.addTodo}>
+  return html`<div>
+      <div className=${styles.addTodo}>
         <input
-          value={toDoText}
-          onChange={handleChange}
-          className={styles.inputTodo}
+          value=${toDoText}
+          onInput=${handleChange}
+          className=${styles.inputTodo}
         ></input>
         <button
-          className={styles.btnAddTodo}
-          data-clicked={true}
-          onClick={handleSubmit}
+          className=${styles.btnAddTodo}
+          data-clicked=${true}
+          onClick=${handleSubmit}
         >
           Add to do item
         </button>
       </div>
-      {warningMessage && (
-        <div className={styles.warningMessage}>{warningMessage}</div>
-      )}
-      <div className={styles.columnContainer}>
-        <Column
+      ${
+        warningMessage &&
+        html`<div className=${styles.warningMessage}>${warningMessage}</div>`
+      }
+      <div className=${styles.columnContainer}>
+        <${Column}
           title="To do"
           type="todo"
-          items={toDoItems}
-          deleteItem={deleteItem}
-          handleArrowClick={handleArrowClick}
+          items=${toDoItems}
+          deleteItem=${deleteItem}
+          handleArrowClick=${handleArrowClick}
         />
-        <Column
+        <${Column}
           title="In progress"
           type="in-progress"
-          items={toDoItems}
-          deleteItem={deleteItem}
-          handleArrowClick={handleArrowClick}
+          items=${toDoItems}
+          deleteItem=${deleteItem}
+          handleArrowClick=${handleArrowClick}
         />
-        <Column
+        <${Column}
           title="Completed"
           type="completed"
-          items={toDoItems}
-          deleteItem={deleteItem}
-          handleArrowClick={handleArrowClick}
+          items=${toDoItems}
+          deleteItem=${deleteItem}
+          handleArrowClick=${handleArrowClick}
         />
       </div>
-    </div>
-  );
+    </div>`;
 }
 
-export default App;
+export default Homepage;
