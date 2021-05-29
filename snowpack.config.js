@@ -2,7 +2,7 @@
 module.exports = {
   mount: {
     public: "/",
-    src: "/dist",
+    counter: "/dist",
   },
   plugins: [
     /* ... */
@@ -13,21 +13,16 @@ module.exports = {
   ],
   optimize: {
     /* Example: Bundle your final build: */
-    bundle: true,
   },
   packageOptions: {
     /* ... */
   },
   devOptions: {
-    /* ... */
+    open: "chrome"
   },
   buildOptions: {
-    baseUrl: "/to-do-app-improved",
+    baseUrl: "/",
     metaUrlPath: `dist`,
   },
-  alias: {
-    // prettier-ignore
-    "react": "preact/compat",
-    "react-dom": "preact/compat",
-  },
+
 };

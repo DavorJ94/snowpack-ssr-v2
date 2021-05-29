@@ -1,6 +1,7 @@
 import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { html } from "htm/preact";
+import "../store"
 import styles from "./homepage.module.css";
 import Column from "./components/Column";
 import emitter from "../eventEmitter";
@@ -19,6 +20,7 @@ function Homepage() {
   }, [handleSubmit]);
 
   useEffect(() => {
+    !localStorage.getItem("deletedItems") && localStorage.setItem("deletedItems", "[]")
     let items = JSON.parse(localStorage.getItem("toDoItems"));
     setToDoItems(() => items);
   }, []);

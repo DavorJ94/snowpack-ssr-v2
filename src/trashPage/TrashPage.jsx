@@ -1,6 +1,7 @@
 import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import { html } from "htm/preact";
+import storeDeletedItems, {getData} from "../store"
 import styles from "./trashpage.module.css";
 import emitter from "../eventEmitter";
 import Column from "./components/Column";
@@ -10,10 +11,12 @@ function TrashPage() {
 
   useEffect(() => {
     let items = JSON.parse(localStorage.getItem("deletedItems"));
-    if (items) setDeletedItems(() => [...items]);
+    if (items) setDeletedItems(() => [...items, ...storeDeletedItems]);
     emitter.addListener("itemDeleted", function (x) {
       setDeletedItems((prevItems) => [...prevItems, x]);
     });
+
+  getData()
   }, []);
 
   useEffect(() => {

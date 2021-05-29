@@ -3,17 +3,22 @@
     "start": "snowpack dev",
     "build": "snowpack build",
     "predeploy": "snowpack build",
-    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "server": "node -r esm ./server/server.js"
   },
   "devDependencies": {
     "snowpack": "^3.0.1"
   },
   "dependencies": {
+    "anumargak": "^2.2.0",
+    "esm": "^3.2.25",
     "fbemitter": "^3.0.0",
     "htm": "^3.0.4",
     "navigo": "^8.11.1",
     "preact": "^10.5.13",
-    "preact-compat": "^3.19.0"
+    "preact-compat": "^3.19.0",
+    "preact-render-to-string": "^5.1.19",
+    "turbo-http": "^0.3.2"
   },
   "plugins": [
     [

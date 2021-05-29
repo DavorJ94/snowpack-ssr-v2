@@ -1,0 +1,47 @@
+
+
+
+.outerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.componentSpace {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventCommentContainer {
+  width: 40%;
+  border-left: 1px solid black;
+  padding:1em;
+}
+
+.commentWindow, .eventWindow {
+  min-height: 30vh;
+  border: 1px solid black;
+  padding:1em;
+}
+
+.subNavbar {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  justify-content: center;
+  text-align: center;
+}
+
+.subNavItem {
+  cursor: pointer;
+  padding: 1em;
+  border: 1px solid white;
+  transition: all 0.2s ease;
+}
+
+.subNavItem:hover {
+  transform: scale(1.2)
+}
